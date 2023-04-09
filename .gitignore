@@ -1,0 +1,16 @@
+node_modules
+*.log*
+.cache
+.output
+.env
+dist
+.DS_Store
+/coverage
+*.tgz
+.DS_Store
+.idea
+.temp
+cache
+temp
+pnpm-global
+types

@@ -1,3 +1,5 @@
+/* Note you don't need to reimport the tailwind classes here, they are picked up from the base theme*/
+
 /**
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css

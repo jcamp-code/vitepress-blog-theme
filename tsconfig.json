@@ -1,3 +1,36 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json"
+  // started with this https://github.com/vuejs/tsconfig
+
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+
+    // uncomment for node projects
+    // "types": ["node"]
+
+    // Required in Vue projects
+    "jsx": "preserve",
+
+    // `"noImplicitThis": true` is part of `strict`
+    // Added again here in case some users decide to disable `strict`.
+    // This enables stricter inference for data properties on `this`.
+    "noImplicitThis": true,
+    "strict": true,
+    "verbatimModuleSyntax": true,
+
+    // Recommended
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+
+    // not needed with unbuild
+    "outDir": "dist",
+    "declaration": true
+    // "declarationDir": "types"
+  },
+  "include": ["src"]
 }

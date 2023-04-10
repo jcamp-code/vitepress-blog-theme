@@ -7,9 +7,15 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
-    "starter-vitepress-theme": "workspace:*",
     "vitepress": "1.0.0-alpha.64",
+    "vitepress-blog-theme": "workspace:*",
     "vue": "^3.2.47"
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
+    }
   },
   "pnpm": {
     "peerDependencyRules": {

@@ -1,5 +1,12 @@
-import { type SiteConfig } from 'vitepress'
+import type { PageData, SiteConfig, TransformPageContext } from 'vitepress'
 import type { VPBThemeConfig } from '../theme/theme-types'
-declare function genFeed(config: SiteConfig<any>): Promise<void>
-
-export { genFeed }
+export declare const tailwindContent: string[]
+export declare function processPosts(
+  pageData: PageData,
+  ctx: TransformPageContext,
+  aside?: string,
+  sidebar?: boolean
+): Promise<void>
+export declare function genFeed(
+  config: SiteConfig<VPBThemeConfig>
+): Promise<void>

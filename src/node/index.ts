@@ -1,8 +1,33 @@
 import path from 'node:path'
 import { writeFileSync } from 'node:fs'
 import { Feed } from 'feed'
-import { type SiteConfig, createContentLoader } from 'vitepress'
+import { createContentLoader } from 'vitepress'
+import type { PageData, SiteConfig, TransformPageContext } from 'vitepress'
 import type { VPBThemeConfig } from '../theme/theme-types'
+
+export const tailwindContent = [
+  './node_modules/vitepress-blog-theme/dist/**/*.{js,ts,vue}',
+  './*.md',
+  './blog/**/*.md',
+  './.vitepress/**/*.{js,ts,vue}',
+]
+
+export async function processPosts(
+  pageData: PageData,
+  ctx: TransformPageContext,
+  aside = 'left',
+  sidebar = false
+) {
+  const config = ctx?.siteConfig?.site?.themeConfig as VPBThemeConfig
+  const pattern = config.blog?.postsPath ?? 'blog/posts'
+  if (pageData.relativePath.includes(pattern)) {
+    pageData.frontmatter.blog = 'blog'
+    pageData.frontmatter.aside = aside
+    pageData.frontmatter.sidebar = sidebar
+    pageData.frontmatter.prev = false
+    pageData.frontmatter.next = false
+  }
+}
 
 export async function genFeed(config: SiteConfig<VPBThemeConfig>) {
   const blogConfig = config.site.themeConfig.blog ?? {}
@@ -20,7 +45,7 @@ export async function genFeed(config: SiteConfig<VPBThemeConfig>) {
     copyright: feedConfig.copyright ?? '',
   })
 
-  const pattern = blogConfig.postsPattern ?? '/blog/posts/*.md'
+  const pattern = `${blogConfig?.postsPath ?? '/blog/posts'}/**/*.md`
   const output = feedConfig.outputPath ?? '/feed.rss'
 
   const posts = await createContentLoader(pattern, {

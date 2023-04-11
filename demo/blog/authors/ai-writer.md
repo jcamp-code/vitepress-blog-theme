@@ -1,6 +1,6 @@
 ---
-name: Louis Lane
-avatar: https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/roberta-casas.png
+name: AI Writer
+avatar: https://cdn-icons-png.flaticon.com/64/149/149071.png
 ---
 
 <AuthorDetail>

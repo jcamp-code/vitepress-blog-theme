@@ -31,7 +31,7 @@ const { theme } = useData()
         v-for="(post, index) in year"
         :key="index"
         :href="withBase(post.url)"
-        class="m-2 flex cursor-pointer items-center justify-between leading-6"
+        class="m-2 flex cursor-pointer items-center justify-between leading-6 hover:text-[color:var(--vp-c-brand-dark)] dark:hover:text-[color:var(--vp-c-brand-light)]"
       >
         <div class="cursor-pointer leading-6">
           <div class="title-o"></div>

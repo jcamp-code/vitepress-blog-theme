@@ -3,7 +3,7 @@ import { createContentLoader } from 'vitepress'
 const config = globalThis.VITEPRESS_CONFIG
 const blogConfig = config.site.themeConfig.blog
 
-const pattern = blogConfig?.authorsPattern ?? '/blog/authors/*.md'
+const pattern = `${blogConfig?.authorsPath ?? '/blog/authors'}/**/*.md`
 
 export default createContentLoader(pattern, {
   excerpt: true,

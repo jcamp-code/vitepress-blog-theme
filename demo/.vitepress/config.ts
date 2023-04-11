@@ -1,12 +1,26 @@
 import { defineConfigWithTheme } from 'vitepress'
 import type { VPBThemeConfig } from 'vitepress-blog-theme'
-import { genFeed } from 'vitepress-blog-theme/node'
+import { genFeed, processPosts } from 'vitepress-blog-theme/node'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<VPBThemeConfig>({
   title: 'VitePress Blog Demo',
   description: 'A VitePress Blog Theme',
   themeConfig: {
+    blog: {
+      title: 'My AI Written Blog',
+      description: 'All these articles were written by AI!',
+      defaultAuthor: 'AI Writer',
+      categoryIcons: {
+        article: 'i-[heroicons-outline/book-open]',
+        tutorial: 'i-[heroicons-outline/academic-cap]',
+        document: 'i-[heroicons-outline/annotation]',
+      },
+      tagIcons: {
+        github: 'i-[carbon/logo-github]',
+        vue: 'i-[carbon/logo-vue]',
+      },
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
@@ -57,13 +71,6 @@ export default defineConfigWithTheme<VPBThemeConfig>({
   },
   buildEnd: genFeed,
   async transformPageData(pageData, ctx) {
-    const config = ctx?.siteConfig?.site?.themeConfig as VPBThemeConfig
-    const pattern =
-      config.blog?.postsPattern?.replace('/*.md', '') ?? 'blog/posts'
-    if (pageData.relativePath.includes(pattern)) {
-      pageData.frontmatter.blog = 'blog'
-      pageData.frontmatter.aside = 'left'
-      pageData.frontmatter.sidebar = false
-    }
+    await processPosts(pageData, ctx)
   },
 })

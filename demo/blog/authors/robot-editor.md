@@ -1,7 +1,7 @@
 ---
-name: Peter Parker
+name: Robot Editor
 gravatar: eca93da2c67aadafe35d477aa8f454b8
-twitter: '@youyuxi'
+twitter: '@getanyword'
 ---
 
 <AuthorDetail>

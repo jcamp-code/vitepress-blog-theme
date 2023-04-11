@@ -125,20 +125,28 @@ export interface VPBBlogConfig {
   path?: string
 
   /**
-   * The posts pattern
+   * The posts path
    *
-   * @example '/myposts/*.md'
-   * @default 'blog/posts/*.md'
+   * @example '/myposts'
+   * @default '/blog/posts'
    */
-  postsPattern?: string
+  postsPath?: string
 
   /**
-   * The authors pattern
+   * The authors path
    *
-   * @example '/myauthors/*.md'
-   * @default 'blog/authors/*.md'
+   * @example '/myauthors'
+   * @default '/blog/authors'
    */
-  authorsPattern?: string
+  authorsPath?: string
+
+  /**
+   * The tags path
+   *
+   * @example '/mytags'
+   * @default '/blog/tags'
+   */
+  tagsPath?: string
 
   /**
    * The default author name to use on posts without an author

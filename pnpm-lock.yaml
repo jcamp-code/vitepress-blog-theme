@@ -8,8 +8,8 @@ importers:
         specifier: ^1.1.6
         version: 1.1.6
       '@iconify-json/carbon':
-        specifier: ^1.1.6
-        version: 1.1.6
+        specifier: ^1.1.16
+        version: 1.1.16
       '@iconify-json/fluent-emoji':
         specifier: ^1.1.12
         version: 1.1.12
@@ -116,6 +116,9 @@ importers:
 
   demo:
     devDependencies:
+      '@iconify-json/carbon':
+        specifier: ^1.1.16
+        version: 1.1.16
       vitepress:
         specifier: 1.0.0-alpha.64
         version: 1.0.0-alpha.64(@types/node@18.15.11)
@@ -783,11 +786,10 @@ packages:
       '@iconify/types': 2.0.0
     dev: false
 
-  /@iconify-json/carbon@1.1.6:
-    resolution: {integrity: sha512-3a/D7qzqBO6hsDmp6/k2eFfJzL1sw1yCQOq2yr86el2CzgMmQdKYROOyCCDNBxGn+dkkc/Rx1/8OEciakAJcFg==}
+  /@iconify-json/carbon@1.1.16:
+    resolution: {integrity: sha512-AD8bcnRSGA0WfcGEass2FbA0sagrUzrpFx5WchuDy3uf7yKBWumdypdQK121DH321fQDl5+zZQ26T6gC9knwUQ==}
     dependencies:
       '@iconify/types': 2.0.0
-    dev: false
 
   /@iconify-json/fluent-emoji@1.1.12:
     resolution: {integrity: sha512-Mga6M530cJPQR+85HkPHAR1LQjYFVEQTsWF5SBKM4Vz9ycaW3kTwT9qQjFQQ/8Ah2pJk6Hfq8xhimuhG9r6Eyw==}
@@ -816,7 +818,6 @@ packages:
 
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: false
 
   /@iconify/utils@2.1.5:
     resolution: {integrity: sha512-6MvDI+I6QMvXn5rK9KQGdpEE4mmLTcuQdLZEiX5N+uZB+vc4Yw9K1OtnOgkl8mp4d9X0UrILREyZgF1NUwUt+Q==}

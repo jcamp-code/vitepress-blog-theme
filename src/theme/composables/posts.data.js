@@ -4,7 +4,7 @@ import { formatDistance } from 'date-fns'
 const config = globalThis.VITEPRESS_CONFIG
 const blogConfig = config.site.themeConfig.blog
 
-const pattern = blogConfig?.postsPattern ?? '/blog/posts/*.md'
+const pattern = `${blogConfig?.postsPath ?? '/blog/posts'}/**/*.md`
 
 export default createContentLoader(pattern, {
   excerpt: true,

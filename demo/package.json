@@ -7,6 +7,7 @@
     "preview": "vitepress preview"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.1.16",
     "vitepress": "1.0.0-alpha.64",
     "vitepress-blog-theme": "workspace:*",
     "vue": "^3.2.47"

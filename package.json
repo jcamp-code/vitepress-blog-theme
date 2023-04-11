@@ -25,12 +25,10 @@
   "exports": {
     ".": {
       "types": "./dist/theme/index.d.ts",
-      "require": "./dist/theme/index.cjs",
-      "import": "./dist/theme/index.js"
+      "default": "./dist/theme/index.js"
     },
     "./node": {
       "types": "./dist/node/index.d.ts",
-      "require": "./dist/node/index.cjs",
       "default": "./dist/node/index.js"
     }
   },
@@ -58,7 +56,8 @@
     "release:minor": "changelogen --release --minor --push && pnpm publish",
     "release:major": "changelogen --release --major --push && pnpm publish",
     "release:patch": "changelogen --release --patch --push && pnpm publish",
-    "demo": "run-p dev demo-dev",
+    "demo": "run-s build demo:start",
+    "demo:start": "run-p dev:start demo-dev",
     "demo-dev": "cd demo && pnpm dev",
     "demo-build": "run-p build demo-build-only",
     "demo-build-only": "cd demo && pnpm build",
@@ -66,7 +65,7 @@
   },
   "dependencies": {
     "@iconify-json/bx": "^1.1.6",
-    "@iconify-json/carbon": "^1.1.6",
+    "@iconify-json/carbon": "^1.1.16",
     "@iconify-json/fluent-emoji": "^1.1.12",
     "@iconify-json/heroicons-outline": "^1.1.6",
     "@iconify-json/logos": "^1.1.24",

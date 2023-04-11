@@ -65,7 +65,8 @@ if (inBrowser) {
         <div
           class="px-0 pb-2 pt-4 text-xl font-semibold leading-6 text-[color:var(--vp-c-brand-light)] dark:text-[color:var(--vp-c-brand-dark)]"
         >
-          {{ selectedTag }} {{ postsByTag[selectedTag].length }}
+          <VPBTagIcon :tag="selectedTag" />{{ selectedTag }}
+          <span class="text-xs"> ( {{ postsByTag[selectedTag].length }} )</span>
         </div>
         <a
           v-for="(post, index) in postsByTag[selectedTag]"

@@ -19,9 +19,20 @@ export async function processPosts(
   sidebar = false
 ) {
   const config = ctx?.siteConfig?.site?.themeConfig as VPBThemeConfig
-  const pattern = config.blog?.postsPath ?? 'blog/posts'
-  if (pageData.relativePath.includes(pattern)) {
-    pageData.frontmatter.blog = 'blog'
+  const postsPattern = config.blog?.postsPath ?? 'blog/posts'
+  const authorsPattern = config.blog?.authorsPath ?? 'blog/authors'
+
+  if (
+    pageData.relativePath.includes(postsPattern)
+    // pageData.relativePath.includes(authorsPattern)
+  ) {
+    pageData.frontmatter.blog = 'post'
+    pageData.frontmatter.aside = aside
+    pageData.frontmatter.sidebar = sidebar
+    pageData.frontmatter.prev = false
+    pageData.frontmatter.next = false
+  }
+  if (pageData.relativePath.includes(authorsPattern)) {
     pageData.frontmatter.aside = aside
     pageData.frontmatter.sidebar = sidebar
     pageData.frontmatter.prev = false

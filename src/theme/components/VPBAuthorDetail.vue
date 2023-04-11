@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 import { useAuthors } from '../composables/useAuthors'
 
 const { site } = useData()
@@ -26,7 +26,7 @@ const { author, prevAuthor, nextAuthor } = useAuthors()
         <div class="mt-4 flex items-center justify-between text-gray-500">
           <a
             v-if="prevAuthor"
-            :href="`${site.base}blog${prevAuthor.url}`"
+            :href="withBase(prevAuthor.url)"
             class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)] dark:text-white"
           >
             <div class="i-[bx/arrow-back] mr-2" />
@@ -35,7 +35,7 @@ const { author, prevAuthor, nextAuthor } = useAuthors()
           <div v-if="!prevAuthor" />
           <a
             v-if="nextAuthor"
-            :href="`${site.base}blog${nextAuthor.url}`"
+            :href="withBase(nextAuthor.url)"
             class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)] dark:text-white"
           >
             <span>Next Author</span>

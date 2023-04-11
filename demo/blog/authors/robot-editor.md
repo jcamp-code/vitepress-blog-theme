@@ -4,32 +4,10 @@ gravatar: eca93da2c67aadafe35d477aa8f454b8
 twitter: '@getanyword'
 ---
 
-<AuthorDetail>
+<VPBAuthorDetail>
 
-## Cruore nato deorum olivi et unus actum
+## Robot Editor
 
-Habere aconita moderamen lecto, per domusque tonitrus noxae, in vagantem
-telumque tamen. Certius **sanguine Minoide** usus? Undis constitit illic, pars
-vastarumque posses **visum patrem** facinusque priora? Respondit severa; [per
-aut](https://github.com/sfxcode/vitepress-blog-starter), cruor, me populis subiti, inlatum ubi **sic ipse
-Antigonen**. Mitis parcere Priamusque lingua postquam et stat madidum illa,
-excipit post.
+The AI editor is an incredibly powerful tool for content creators. It reads through written text and makes suggestions for edits, adding and deleting words, rearranging sentence structure and even reworking entire paragraphs to help you create a piece that reads fluidly. Its capabilities extend even further - with access to a huge library of synonyms and language structures, the AI editor is able to not only check for grammar, punctuation and syntax errors, but also give content creators more artistic and sophisticated ways to express their ideas. It's perfect for making sure every piece is free of any potential errors before submitting, making it easier to take your writing to the next level.
 
-    graphic.twitter = -4;
-    itunes_recycle = gps_search_hit - grayscale_packet_vpi.finder(ppi);
-    var enterprise_tft = lte_markup_rom(clock_win, 5);
-
-## Obstrepuere tanto defenderet acta corpore cum lacum
-
-Lorem markdownum, non quamvis bobus Troia: ventos dedisses sparsas veris,
-inmissusque [potiora](https://github.com/sfxcode/vitepress-blog-starter), nitentia. Et aeolis
-crematisregia umbrae sonabunt pars, te molibus
-[alterius](https://github.com/sfxcode/vitepress-blog-starter), Athin statione: pabula Argus vino
-quaeritis ostendi pendulaque. Et coniunx inmitem, fuit etiam dederat Abas,
-orantemque **placui**. Minos alta quatiebant iubet!
-
-- Dixi blanditur
-- Quae illo signa cum e toto cunctos
-- Aut malo lunam nunc caietam nostro reddere
-
-</AuthorDetail>
+</VPBAuthorDetail>

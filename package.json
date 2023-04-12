@@ -4,15 +4,15 @@
   "version": "0.1.0",
   "packageManager": "^pnpm@8.1.0",
   "description": "VitePress easy to use blog theme",
-  "author": "John Campion",
+  "author": "John Campion (https://github.com/JohnCampionJr/)",
   "license": "MIT",
-  "homepage": "https://github.com/jcamp-code/starter-vitepress-theme",
+  "homepage": "https://github.com/jcamp-code/vitepress-blog-theme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jcamp-code/starter-vitepress-theme.git"
+    "url": "git+https://github.com/jcamp-code/vitepress-blog-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/jcamp-code/starter-vitepress-theme/issues"
+    "url": "https://github.com/jcamp-code/vitepress-blog-theme/issues"
   },
   "keywords": [
     "vite",
@@ -51,10 +51,10 @@
     "format": "prettier --check --write .",
     "postinstall": "npx simple-git-hooks",
     "test": "vitest run",
-    "release": "changelogen --release --push && pnpm publish",
-    "release:minor": "changelogen --release --minor --push && pnpm publish",
-    "release:major": "changelogen --release --major --push && pnpm publish",
-    "release:patch": "changelogen --release --patch --push && pnpm publish",
+    "release": "changelogen --release --push && pnpm publish --access public",
+    "release:minor": "changelogen --release --minor --push && pnpm publish --access public",
+    "release:major": "changelogen --release --major --push && pnpm publish --access public",
+    "release:patch": "changelogen --release --patch --push && pnpm publish --access public",
     "demo": "run-s build demo:start",
     "demo:start": "run-p dev:start demo-dev",
     "demo-dev": "cd demo && pnpm dev",

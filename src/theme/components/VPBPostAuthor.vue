@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { withBase } from 'vitepress'
 import { usePosts } from '../composables/usePosts'
 import { useAuthors } from '../composables/useAuthors'
 
@@ -40,7 +41,14 @@ const author = computed(() => {
           />
           <dl class="whitespace-nowrap text-sm font-medium leading-5">
             <dt class="sr-only">Name</dt>
-            <dd class="text-gray-900 dark:text-white">{{ author.name }}</dd>
+            <dd class="text-gray-900 dark:text-white">
+              <a
+                :href="withBase(author.url)"
+                class="text-lg text-gray-900 hover:text-[color:var(--vp-c-brand-light)] dark:text-white dark:hover:text-[color:var(--vp-c-brand-dark)]"
+              >
+                {{ author.name }}
+              </a>
+            </dd>
             <dt v-if="author.twitter" class="sr-only">Twitter</dt>
             <dd v-if="author.twitter">
               <a

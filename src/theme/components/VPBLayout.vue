@@ -3,8 +3,10 @@ import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import VPBLayoutPostTop from './VPBLayoutPostTop.vue'
 import VPBLayoutPostBottom from './VPBLayoutPostBottom.vue'
-import VPBLayoutAsideTop from './VPBLayoutPostAsideTop.vue'
-import VPBLayoutAsideBottom from './VPBLayoutPostAsideBottom.vue'
+import VPBLayoutPostAsideTop from './VPBLayoutPostAsideTop.vue'
+import VPBLayoutPostAsideBottom from './VPBLayoutPostAsideBottom.vue'
+import VPBLayoutAuthorAsideBottom from './VPBLayoutAuthorAsideBottom.vue'
+import VPBLayoutAuthorTop from './VPBLayoutAuthorTop.vue'
 
 const { Layout } = DefaultTheme
 const { frontmatter } = useData()
@@ -13,16 +15,18 @@ const { frontmatter } = useData()
 <template>
   <Layout>
     <template #doc-before>
-      <VPBLayoutPostTop v-if="frontmatter.blog" />
+      <VPBLayoutPostTop v-if="frontmatter.blog === 'post'" />
+      <VPBLayoutAuthorTop v-if="frontmatter.blog === 'author'" />
     </template>
     <template #doc-footer-before>
-      <VPBLayoutPostBottom v-if="frontmatter.blog" />
+      <VPBLayoutPostBottom v-if="frontmatter.blog === 'post'" />
     </template>
     <template #aside-top>
-      <VPBLayoutAsideTop v-if="frontmatter.blog" />
+      <VPBLayoutPostAsideTop v-if="frontmatter.blog === 'post'" />
     </template>
     <template #aside-bottom>
-      <VPBLayoutAsideBottom v-if="frontmatter.blog" />
+      <VPBLayoutPostAsideBottom v-if="frontmatter.blog === 'post'" />
+      <VPBLayoutAuthorAsideBottom v-if="frontmatter.blog === 'author'" />
     </template>
   </Layout>
 </template>

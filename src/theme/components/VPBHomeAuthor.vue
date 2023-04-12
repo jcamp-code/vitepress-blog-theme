@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useData } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
 import { useAuthors } from '../composables/useAuthors'
 
@@ -30,7 +30,7 @@ const author = computed(() => {
       :alt="author.name"
     />
     <a
-      :href="`${site.base}blog${author.url}`"
+      :href="withBase(author.url)"
       class="inline-flex items-center font-medium hover:text-[color:var(--vp-c-brand-dark)]"
       ><span class="font-medium dark:text-white">
         {{ author.name }}

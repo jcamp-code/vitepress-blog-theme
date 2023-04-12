@@ -1,11 +1,17 @@
 <script setup lang="ts">
+import { useData, withBase } from 'vitepress'
 import { usePosts } from '../composables/usePosts'
+import type { VPBThemeConfig } from '..'
 
 defineProps<{
   insideDoc?: boolean
 }>()
 
+const { site } = useData()
 const { nextPost, prevPost } = usePosts()
+
+const theme = site.value.themeConfig as VPBThemeConfig
+const path = withBase(theme.blog?.path ?? '/blog/')
 </script>
 
 <template>
@@ -30,7 +36,7 @@ const { nextPost, prevPost } = usePosts()
       </div>
     </div>
     <div class="pt-3">
-      <a class="link" href="/">← Back to the blog</a>
+      <a class="link" :href="withBase(path)">← Back to the blog</a>
     </div>
   </footer>
 </template>

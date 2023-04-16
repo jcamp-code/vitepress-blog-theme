@@ -6,7 +6,7 @@ import type { PageData, SiteConfig, TransformPageContext } from 'vitepress'
 import type { VPBThemeConfig } from '../theme/theme-types'
 
 export const tailwindContent = [
-  './node_modules/vitepress-blog-theme/dist/**/*.{js,ts,vue}',
+  './node_modules/@jcamp/vitepress-blog-theme/dist/**/*.{js,ts,vue}',
   './*.md',
   './blog/**/*.md',
   './.vitepress/**/*.{js,ts,vue}',

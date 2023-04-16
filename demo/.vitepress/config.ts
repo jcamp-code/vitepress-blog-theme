@@ -1,6 +1,6 @@
 import { defineConfigWithTheme } from 'vitepress'
-import type { VPBThemeConfig } from 'vitepress-blog-theme'
-import { genFeed, processPosts } from 'vitepress-blog-theme/node'
+import type { VPBThemeConfig } from '@jcamp/vitepress-blog-theme'
+import { genFeed, processPosts } from '@jcamp/vitepress-blog-theme/node'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<VPBThemeConfig>({

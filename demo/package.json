@@ -8,8 +8,8 @@
   },
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.16",
-    "vitepress": "1.0.0-alpha.64",
-    "vitepress-blog-theme": "workspace:*",
+    "@jcamp/vitepress-blog-theme": "workspace:*",
+    "vitepress": "1.0.0-alpha.69",
     "vue": "^3.2.47"
   },
   "postcss": {

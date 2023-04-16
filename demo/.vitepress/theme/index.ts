@@ -1,4 +1,4 @@
-import Theme from 'vitepress-blog-theme'
+import Theme from '@jcamp/vitepress-blog-theme'
 import './style.css'
 
 export default {

@@ -40,10 +40,10 @@
     "dev": "vitepress dev demo",
     "build": "pnpm build-node && vitepress build demo",
     "serve": "pnpm build && vitepress serve demo",
-    "release": "changelogen --release --push && pnpm publish",
-    "release:minor": "changelogen --release --minor --push && pnpm publish --access-public",
-    "release:major": "changelogen --release --major --push && pnpm publish --access-public",
-    "release:patch": "changelogen --release --patch --push && pnpm publish --access-public"
+    "release": "changelogen --release --push && pnpm publish --access public",
+    "release:minor": "changelogen --release --minor --push && pnpm publish --access public",
+    "release:major": "changelogen --release --major --push && pnpm publish --access public",
+    "release:patch": "changelogen --release --patch --push && pnpm publish --access public"
   },
   "peerDependencies": {
     "vitepress": "^1.0.0-alpha.73"

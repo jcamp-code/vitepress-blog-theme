@@ -29,8 +29,13 @@
 
     // not needed with unbuild
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
     // "declarationDir": "types"
+    "paths": {
+      "@jcamp/vitepress-blog-theme": ["./src/theme/index.ts"],
+      "@jcamp/vitepress-blog-theme/node": ["./src/node/index.ts"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "demo/.vitepress/**/*"],
+  "exclude": ["node_modules"]
 }

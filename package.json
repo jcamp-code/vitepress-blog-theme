@@ -22,45 +22,31 @@
     "blog"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/theme/index.d.ts",
-      "default": "./dist/theme/index.js"
-    },
-    "./node": {
-      "types": "./dist/node/index.d.ts",
-      "default": "./dist/node/index.js"
-    }
+    ".": "./src/theme/index.ts",
+    "./node": "./dist/node/index.js"
   },
-  "main": "./dist/theme/index.js",
-  "types": "./dist/theme/index.d.ts",
+  "main": "src/theme/index.ts",
   "files": [
-    "dist",
-    "node.d.ts"
+    "src",
+    "dist"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "dev": "run-s clean dev:start",
-    "dev:start": "run-p dev:tsc dev:copy",
-    "dev:tsc": "tsc --sourcemap -w",
-    "dev:copy": "node scripts/copy -w",
-    "build": "run-s clean build:tsc build:copy",
-    "build:tsc": "tsc && vue-tsc --declaration --emitDeclarationOnly",
-    "build:copy": "node scripts/copy",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --check --write .",
-    "prepare": "npx simple-git-hooks",
-    "test": "vitest run",
-    "release": "changelogen --release --push && pnpm publish --access public",
-    "release:minor": "changelogen --release --minor --push && pnpm publish --access public",
-    "release:major": "changelogen --release --major --push && pnpm publish --access public",
-    "release:patch": "changelogen --release --patch --push && pnpm publish --access public",
-    "demo": "run-s build demo:start",
-    "demo:start": "run-p dev:start demo-dev",
-    "demo-dev": "cd demo && pnpm dev",
-    "demo-build": "run-s build demo-build-only",
-    "demo-build-only": "cd demo && pnpm build",
-    "demo-preview": "cd demo && pnpm preview"
+    "prepare": "npx simple-git-hooks && pnpm build-node",
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "type": "tsc --noEmit",
+    "build-node": "tsc -p ./src/node",
+    "test": "pnpm lint && pnpm type",
+    "dev": "vitepress dev demo",
+    "build": "pnpm build-node && vitepress build demo",
+    "serve": "pnpm build && vitepress serve demo",
+    "release": "changelogen --release --push && pnpm publish",
+    "release:minor": "changelogen --release --minor --push && pnpm publish --access-public",
+    "release:major": "changelogen --release --major --push && pnpm publish --access-public",
+    "release:patch": "changelogen --release --patch --push && pnpm publish --access-public"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-alpha.73"
   },
   "dependencies": {
     "@iconify-json/bx": "^1.1.6",
@@ -71,38 +57,29 @@
     "@jcamp/tailwindcss-plugin-icons": "^0.5.0",
     "@tailwindcss/typography": "^0.5.4",
     "autoprefixer": "^10.4.13",
+    "date-fns": "^2.29.3",
+    "feed": "^4.2.2",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.3.1",
-    "vitepress": "1.0.0-alpha.70",
+    "vitepress": "1.0.0-alpha.73",
     "vue": "^3.2.47"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@jcamp/eslint-config": "0.6.1",
-    "@types/node": "^18.15.10",
-    "@vue/tsconfig": "^0.1.3",
+    "@types/node": "^18.15.13",
     "changelogen": "^0.5.3",
-    "chokidar": "3.5.3",
     "commitlint-config-unjs": "^1.0.1",
-    "date-fns": "^2.29.3",
     "eslint": "^8.38.0",
-    "fast-glob": "^3.2.12",
-    "feed": "^4.2.2",
-    "flexsearch": "^0.7.31",
-    "fs-extra": "^11.1.1",
     "gray-matter": "^4.0.3",
     "lint-staged": "^13.2.1",
-    "npm-run-all": "^4.1.5",
     "prettier": "^2.8.7",
-    "rimraf": "5.0.0",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4",
-    "vite": "^4.2.1",
-    "vitepress": "1.0.0-alpha.70",
-    "vitepress-plugin-search": "1.0.4-alpha.19",
+    "vite": "^4.3.1",
+    "vitepress": "1.0.0-alpha.73",
     "vitest": "^0.30.1",
-    "vue": "^3.2.47",
-    "vue-tsc": "^1.2.0"
+    "vue": "^3.2.47"
   },
   "pnpm": {
     "peerDependencyRules": {
@@ -112,6 +89,12 @@
       "allowedVersions": {
         "typescript": "5"
       }
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "tailwindcss": {},
+      "autoprefixer": {}
     }
   }
 }

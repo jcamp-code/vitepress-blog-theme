@@ -1,9 +1,25 @@
+import path from 'node:path'
 import { defineConfigWithTheme } from 'vitepress'
 import type { VPBThemeConfig } from '@jcamp/vitepress-blog-theme'
 import { genFeed, processPosts } from '@jcamp/vitepress-blog-theme/node'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<VPBThemeConfig>({
+  vite: {
+    build: {
+      minify: false,
+    },
+    resolve: {
+      alias: {
+        '@jcamp/vitepress-blog-theme/node': path.join(
+          __dirname,
+          '../../src/node'
+        ),
+        '@jcamp/vitepress-blog-theme': path.join(__dirname, '../../src/theme'),
+      },
+    },
+  },
+
   title: 'VitePress Blog Demo',
   description: 'A VitePress Blog Theme',
   themeConfig: {

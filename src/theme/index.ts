@@ -1,5 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
-import type { Theme } from 'vitepress'
+import type { Component } from 'vue'
+import type { Awaitable } from 'vitepress'
+import type { EnhanceAppContext, Theme } from 'vitepress/client'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
@@ -36,9 +38,13 @@ export { useAuthors } from './composables/useAuthors'
 export { usePosts } from './composables/usePosts'
 export { useTags } from './composables/useTags'
 
-export type * from './theme-types'
+interface VPBTheme {
+  Layout: Component
+  enhanceApp: (ctx: EnhanceAppContext) => Awaitable<void>
+  extends?: Theme
+}
 
-export default {
+const theme = {
   ...DefaultTheme,
   Layout: VPBLayout,
   enhanceApp({ app, router, siteData }) {
@@ -49,4 +55,7 @@ export default {
     app.component('VPBTags', VPBTags)
     app.component('VPBTestComponent', VPBTestComponent)
   },
-} as Theme
+} as VPBTheme
+
+export { theme as VPBTheme }
+export type * from './theme-types'

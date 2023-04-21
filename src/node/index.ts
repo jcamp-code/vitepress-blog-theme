@@ -3,7 +3,7 @@ import { writeFileSync } from 'node:fs'
 import { Feed } from 'feed'
 import { createContentLoader } from 'vitepress'
 import type { PageData, SiteConfig, TransformPageContext } from 'vitepress'
-import type { VPBThemeConfig } from '../theme/theme-types'
+import type { VPBThemeConfig } from './theme-types'
 
 export const tailwindContent = [
   './node_modules/@jcamp/vitepress-blog-theme/dist/**/*.{js,ts,vue}',
@@ -22,10 +22,7 @@ export async function processPosts(
   const postsPattern = config.blog?.postsPath ?? 'blog/posts'
   const authorsPattern = config.blog?.authorsPath ?? 'blog/authors'
 
-  if (
-    pageData.relativePath.includes(postsPattern)
-    // pageData.relativePath.includes(authorsPattern)
-  ) {
+  if (pageData.relativePath.includes(postsPattern)) {
     pageData.frontmatter.blog = 'post'
     pageData.frontmatter.aside = aside
     pageData.frontmatter.sidebar = sidebar

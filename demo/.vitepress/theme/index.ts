@@ -1,11 +1,12 @@
-import Theme from '@jcamp/vitepress-blog-theme'
+import type { EnhanceAppContext } from 'vitepress/client'
+import { VPBTheme } from '@jcamp/vitepress-blog-theme'
 import './style.css'
 
 export default {
-  ...Theme,
+  ...VPBTheme,
   // if you need to add more here, this is how to ensure the base theme's components are installed
-  // enhanceApp({ app, router, siteData }) {
-  //   // call the base themes enhanceApp
-  //   Theme.enhanceApp({ app, router, siteData })
-  // },
+  enhanceApp({ app, router, siteData }: EnhanceAppContext) {
+    // call the base themes enhanceApp
+    VPBTheme.enhanceApp({ app, router, siteData })
+  },
 }

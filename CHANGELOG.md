@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.3
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.2...v0.1.3)
+
+### 🚀 Enhancements
+
+- Updated package to include src directly ([41eeee0](https://github.com/jcamp-code/vitepress-blog-theme/commit/41eeee0))
+
+### ❤️ Contributors
+
+- John Campion Jr <john@brightshore.com>
+
 ## v0.1.2
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.1...v0.1.2)

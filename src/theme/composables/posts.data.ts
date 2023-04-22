@@ -1,5 +1,6 @@
-import { createContentLoader } from 'vitepress'
+import { type SiteConfig, createContentLoader } from 'vitepress'
 import { formatDistance } from 'date-fns'
+import type { VPBThemeConfig } from '..'
 
 // @ts-expect-error globalThis is not typed
 const config = globalThis.VITEPRESS_CONFIG as SiteConfig<VPBThemeConfig>

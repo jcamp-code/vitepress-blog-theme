@@ -23,7 +23,8 @@
   ],
   "exports": {
     ".": "./src/theme/index.ts",
-    "./node": "./dist/node/index.js"
+    "./node": "./dist/node/index.js",
+    "./composables/usePosts": "./src/theme/composables/usePosts.ts"
   },
   "main": "src/theme/index.ts",
   "files": [

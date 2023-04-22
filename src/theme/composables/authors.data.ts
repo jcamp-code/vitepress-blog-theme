@@ -1,6 +1,8 @@
-import { createContentLoader } from 'vitepress'
+import { type SiteConfig, createContentLoader } from 'vitepress'
+import type { VPBThemeConfig } from '..'
 
-const config = globalThis.VITEPRESS_CONFIG
+// @ts-expect-error globalThis is not typed
+const config = globalThis.VITEPRESS_CONFIG as SiteConfig<VPBThemeConfig>
 const blogConfig = config.site.themeConfig.blog
 
 const pattern = `${blogConfig?.authorsPath ?? '/blog/authors'}/**/*.md`

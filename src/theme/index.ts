@@ -4,6 +4,10 @@ import type { Awaitable } from 'vitepress'
 import type { EnhanceAppContext, Theme } from 'vitepress/client'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
+import { useArchives } from './composables/useArchives'
+import { useAuthors } from './composables/useAuthors'
+import { usePosts } from './composables/usePosts'
+import { useTags } from './composables/useTags'
 
 import VPBHome from './components/VPBHome.vue'
 import VPBLayout from './components/VPBLayout.vue'
@@ -33,10 +37,12 @@ export { default as VPBTags } from './components/VPBTags.vue'
 export { default as VPBTestComponent } from './components/VPBTestComponent.vue'
 
 // composables
-export { useArchives } from './composables/useArchives'
-export { useAuthors } from './composables/useAuthors'
-export { usePosts } from './composables/usePosts'
-export { useTags } from './composables/useTags'
+// using these outside the package will break Vite/VitePress
+// https://github.com/vuejs/vitepress/issues/2242
+export { useArchives }
+export { useAuthors }
+export { usePosts }
+export { useTags }
 
 interface VPBTheme {
   Layout: Component

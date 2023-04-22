@@ -1,7 +1,8 @@
 import { createContentLoader } from 'vitepress'
 import { formatDistance } from 'date-fns'
 
-const config = globalThis.VITEPRESS_CONFIG
+// @ts-expect-error globalThis is not typed
+const config = globalThis.VITEPRESS_CONFIG as SiteConfig<VPBThemeConfig>
 const blogConfig = config.site.themeConfig.blog
 
 const pattern = `${blogConfig?.postsPath ?? '/blog/posts'}/**/*.md`
@@ -24,7 +25,7 @@ export default createContentLoader(pattern, {
   },
 })
 
-function formatDate(raw) {
+function formatDate(raw: string) {
   const date = new Date(raw)
   date.setUTCHours(12)
   return {
@@ -39,7 +40,7 @@ function formatDate(raw) {
   }
 }
 
-function formatTags(raw) {
+function formatTags(raw: string | string[]) {
   if (typeof raw === 'string') {
     if (raw.includes(',')) {
       return raw.split(',').map((value) => value.trim())

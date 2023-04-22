@@ -28,7 +28,8 @@
   "main": "src/theme/index.ts",
   "files": [
     "src",
-    "dist"
+    "dist",
+    "node.d.ts"
   ],
   "scripts": {
     "prepare": "npx simple-git-hooks && pnpm build-node",

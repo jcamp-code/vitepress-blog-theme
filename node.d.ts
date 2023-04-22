@@ -1,5 +1,5 @@
 import type { PageData, SiteConfig, TransformPageContext } from 'vitepress'
-import type { VPBThemeConfig } from '../theme/theme-types'
+import type { VPBThemeConfig } from './src/theme/theme-types'
 export declare const tailwindContent: string[]
 export declare function processPosts(
   pageData: PageData,

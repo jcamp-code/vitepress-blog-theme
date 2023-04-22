@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.5
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.4...v0.1.5)
+
+### 🩹 Fixes
+
+- More attempts to make data load outside package ([c866f8e](https://github.com/jcamp-code/vitepress-blog-theme/commit/c866f8e))
+
+### ❤️ Contributors
+
+- John Campion Jr <john@brightshore.com>
+
 ## v0.1.4
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.3...v0.1.4)

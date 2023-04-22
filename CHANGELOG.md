@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.1.4
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.3...v0.1.4)
+
+### 🩹 Fixes
+
+- Node types missing ([7982554](https://github.com/jcamp-code/vitepress-blog-theme/commit/7982554))
+- Composables re-exporting breaks vite ([c35192e](https://github.com/jcamp-code/vitepress-blog-theme/commit/c35192e))
+
+### 🏡 Chore
+
+- Fix typo in publish ([87f233c](https://github.com/jcamp-code/vitepress-blog-theme/commit/87f233c))
+
+### ❤️ Contributors
+
+- John Campion Jr <john@brightshore.com>
+
 ## v0.1.3
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.2...v0.1.3)

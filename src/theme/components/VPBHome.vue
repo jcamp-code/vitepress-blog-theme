@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import { usePosts } from '../composables/usePosts'
-import VPBHomePost from './VPBHomePost.vue'
+// import VPBHomePost from './VPBHomePost.vue'
 
 const { posts } = usePosts()
 
 const { theme } = useData()
+
+const postComponent = theme?.value?.blog?.postComponent ?? 'VPBHomePost'
 </script>
 
 <template>
@@ -24,7 +26,7 @@ const { theme } = useData()
     </div>
     <div class="grid gap-6 p-2 lg:grid-cols-2">
       <div v-for="post of posts" :key="post.url">
-        <VPBHomePost :post="post" />
+        <Component :is="postComponent" :post="post" />
       </div>
     </div>
   </div>

@@ -24,6 +24,7 @@ export default defineConfigWithTheme<VPBThemeConfig>({
   description: 'A VitePress Blog Theme',
   themeConfig: {
     blog: {
+      postComponent: 'MyHomePost',
       title: 'My AI Written Blog',
       description: 'All these articles were written by AI!',
       defaultAuthor: 'AI Writer',

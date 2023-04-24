@@ -1,5 +1,6 @@
 import type { EnhanceAppContext } from 'vitepress/client'
 import { VPBTheme } from '@jcamp/vitepress-blog-theme'
+import MyHomePost from './MyHomePost.vue'
 import './style.css'
 
 export default {
@@ -8,5 +9,6 @@ export default {
   enhanceApp({ app, router, siteData }: EnhanceAppContext) {
     // call the base themes enhanceApp
     VPBTheme.enhanceApp({ app, router, siteData })
+    app.component('MyHomePost', MyHomePost)
   },
 }

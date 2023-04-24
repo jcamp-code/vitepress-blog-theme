@@ -1,12 +1,15 @@
 import { type SiteConfig, createContentLoader } from 'vitepress'
 import { formatDistance } from 'date-fns'
-import type { VPBThemeConfig } from '..'
+import type { Post, VPBThemeConfig } from '..'
 
 // @ts-expect-error globalThis is not typed
 const config = globalThis.VITEPRESS_CONFIG as SiteConfig<VPBThemeConfig>
 const blogConfig = config.site.themeConfig.blog
 
 const pattern = `${blogConfig?.postsPath ?? '/blog/posts'}/**/*.md`
+
+const data = [] as Post[]
+export { data }
 
 export default createContentLoader(pattern, {
   excerpt: true,

@@ -10,6 +10,7 @@ import VPBLayout from './components/VPBLayout.vue'
 import VPBArchives from './components/VPBArchives.vue'
 import VPBTags from './components/VPBTags.vue'
 import VPBTestComponent from './components/VPBTestComponent.vue'
+import VPBHomePost from './components/VPBHomePost.vue'
 
 // components
 export { default as VPBArchives } from './components/VPBArchives.vue'
@@ -33,12 +34,10 @@ export { default as VPBTags } from './components/VPBTags.vue'
 export { default as VPBTestComponent } from './components/VPBTestComponent.vue'
 
 // composables
-// using these outside the package will break Vite/VitePress
-// https://github.com/vuejs/vitepress/issues/2242
-// export { useArchives } from './composables/useArchives'
-// export { useAuthors } from './composables/useAuthors'
-// export { usePosts } from './composables/usePosts'
-// export { useTags } from './composables/useTags'
+export { useArchives } from './composables/useArchives'
+export { useAuthors } from './composables/useAuthors'
+export { usePosts } from './composables/usePosts'
+export { useTags } from './composables/useTags'
 
 interface VPBTheme {
   Layout: Component
@@ -56,6 +55,7 @@ const theme = {
     app.component('VPBArchives', VPBArchives)
     app.component('VPBTags', VPBTags)
     app.component('VPBTestComponent', VPBTestComponent)
+    app.component('VPBHomePost', VPBHomePost)
   },
 } as VPBTheme
 

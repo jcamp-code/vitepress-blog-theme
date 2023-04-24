@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.6
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.5...v0.1.6)
+
+### 🩹 Fixes
+
+- Works with vitepress alpha 74 ([07090df](https://github.com/jcamp-code/vitepress-blog-theme/commit/07090df))
+
+### ❤️ Contributors
+
+- John Campion Jr <john@brightshore.com>
+
 ## v0.1.5
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.4...v0.1.5)

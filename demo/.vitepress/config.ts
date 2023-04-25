@@ -1,9 +1,13 @@
 import path from 'node:path'
+import { createRequire } from 'node:module'
 import type { VPBThemeConfig } from '@jcamp/vitepress-blog-theme'
 import { defineConfigWithTheme } from 'vitepress'
 import { genFeed, processData } from '@jcamp/vitepress-blog-theme/config'
 // can't use here
 // import { defineConfig } from '@jcamp/vitepress-blog-theme/config'
+
+const require = createRequire(import.meta.url)
+const pkg = require('@jcamp/vitepress-blog-theme/package.json')
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<VPBThemeConfig>({
@@ -21,7 +25,7 @@ export default defineConfigWithTheme<VPBThemeConfig>({
       },
     },
   },
-  title: 'VitePress Blog Demo',
+  title: 'VitePress Blog',
   description: 'A VitePress Blog Theme',
   themeConfig: {
     blog: {
@@ -43,11 +47,32 @@ export default defineConfigWithTheme<VPBThemeConfig>({
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
-      { text: 'Theme Test', link: '/theme-test' },
+      {
+        text: 'Guide',
+        link: '/guide/what-is-vitepress-blog',
+        activeMatch: '/guide/',
+      },
+      {
+        text: 'Reference',
+        link: '/reference/config',
+        activeMatch: '/reference/',
+      },
+      {
+        text: 'Examples',
+        items: [
+          {
+            text: 'Markdown',
+            link: '/markdown-examples',
+          },
+          {
+            text: 'Theme Test',
+            link: '/theme-test',
+          },
+        ],
+      },
       {
         text: 'Blog',
+        activeMatch: '/blog/',
         items: [
           {
             text: 'Blog Home',
@@ -70,17 +95,35 @@ export default defineConfigWithTheme<VPBThemeConfig>({
           // },
         ],
       },
-    ],
-
-    sidebar: [
       {
-        text: 'Examples',
+        text: pkg.version,
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          {
+            text: 'Changelog',
+            link: 'https://github.com/jcamp-code/vitepress-blog-theme/blob/main/CHANGELOG.md',
+          },
+          {
+            text: 'Contributing',
+            link: 'https://github.com/jcamp-code/vitepress-blog-theme/blob/main/.github/contributing.md',
+          },
         ],
       },
     ],
+
+    sidebar: {
+      '/guide/': sidebarGuide(),
+      '/reference/': sidebarReference(),
+    },
+
+    // sidebar: [
+    //   {
+    //     text: 'Examples',
+    //     items: [
+    //       { text: 'Markdown Examples', link: '/markdown-examples' },
+    //       { text: 'Runtime API Examples', link: '/api-examples' },
+    //     ],
+    //   },
+    // ],
 
     socialLinks: [
       {
@@ -95,3 +138,49 @@ export default defineConfigWithTheme<VPBThemeConfig>({
     await processData(pageData, ctx)
   },
 })
+
+function sidebarGuide() {
+  return [
+    {
+      text: 'Introduction',
+      collapsed: false,
+      items: [
+        {
+          text: 'What is VitePress Blog?',
+          link: '/guide/what-is-vitepress-blog',
+        },
+        { text: 'Getting Started', link: '/guide/getting-started' },
+        { text: 'Credits', link: '/guide/credits' },
+      ],
+    },
+    {
+      text: 'Customization',
+      collapsed: false,
+      items: [
+        { text: 'Using a Custom Theme', link: '/guide/custom-theme' },
+        {
+          text: 'Extending the Default Theme',
+          link: '/guide/extending-default-theme',
+        },
+        { text: 'SSR Compatibility', link: '/guide/ssr-compat' },
+      ],
+    },
+    {
+      text: 'Config & API Reference',
+      link: '/reference/config',
+    },
+  ]
+}
+
+function sidebarReference() {
+  return [
+    {
+      text: 'Reference',
+      items: [
+        { text: 'Site Config', link: '/reference/config' },
+        { text: 'Tailwind', link: '/reference/tailwind' },
+        { text: 'Icons', link: '/reference/icons' },
+      ],
+    },
+  ]
+}

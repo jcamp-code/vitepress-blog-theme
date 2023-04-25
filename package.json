@@ -23,7 +23,8 @@
   ],
   "exports": {
     ".": "./src/theme/index.ts",
-    "./config": "./dist/config/index.js"
+    "./config": "./dist/config/index.js",
+    "./package.json": "./package.json"
   },
   "main": "src/theme/index.ts",
   "files": [

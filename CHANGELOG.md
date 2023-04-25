@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.2
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.2.1...v0.2.2)
+
+### 🚀 Enhancements
+
+- Added custom tailwind base folder ([f17940f](https://github.com/jcamp-code/vitepress-blog-theme/commit/f17940f))
+
+### ❤️ Contributors
+
+- John Campion <john@brightshore.com>
+
 ## v0.2.1
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.2.0...v0.2.1)

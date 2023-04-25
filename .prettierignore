@@ -2,3 +2,4 @@ dist
 pnpm-lock.yaml
 cache
 temp
+config.d.ts

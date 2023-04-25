@@ -1,6 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
 import type { Component } from 'vue'
-import type { Awaitable, UserConfig } from 'vitepress'
+import type { Awaitable } from 'vitepress'
 import type { EnhanceAppContext, Theme } from 'vitepress/client'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
@@ -11,7 +11,6 @@ import VPBArchives from './components/VPBArchives.vue'
 import VPBTags from './components/VPBTags.vue'
 import VPBTestComponent from './components/VPBTestComponent.vue'
 import VPBHomePost from './components/VPBHomePost.vue'
-import type { VPBThemeConfig } from './theme-types'
 
 // components
 export { default as VPBArchives } from './components/VPBArchives.vue'
@@ -59,13 +58,6 @@ const theme = {
     app.component('VPBHomePost', VPBHomePost)
   },
 } as VPBTheme
-
-/**
- * Type config helper
- */
-export function defineConfig(config: UserConfig<VPBThemeConfig>) {
-  return config
-}
 
 export { theme as VPBTheme }
 export type * from './theme-types'

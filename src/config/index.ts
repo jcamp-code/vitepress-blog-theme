@@ -113,19 +113,23 @@ export function defineConfig(config: UserConfig<VPBThemeConfig>) {
   })
 }
 
-export const tailwindContent = [
-  './node_modules/@jcamp/vitepress-blog-theme/src/**/*.{js,ts,vue}',
-  './*.md',
-  './blog/**/*.md',
-  './.vitepress/**/*.{js,ts,vue}',
-]
+export const tailwindThemeContent =
+  './node_modules/@jcamp/vitepress-blog-theme/src/**/*.{js,ts,vue}'
 
-export function defineTailwindConfig(config: Partial<Config>) {
+export function defineTailwindContent(base = './src') {
+  return [
+    tailwindThemeContent,
+    path.join(base, '**/*.md'),
+    path.join(base, '.vitepress/**/*.{js,ts,vue}'),
+  ]
+}
+
+export function defineTailwindConfig(config: Partial<Config>, base = './src') {
   return {
     darkMode: 'class',
     // @ts-expect-error icons works once transpiled
     plugins: [icons()],
-    content: tailwindContent,
+    content: defineTailwindContent(base),
     ...config,
   } as Config
 }

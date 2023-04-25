@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.1
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.2.0...v0.2.1)
+
+### 🩹 Fixes
+
+- Tailwind content update ([32bd1ab](https://github.com/jcamp-code/vitepress-blog-theme/commit/32bd1ab))
+
+### ❤️ Contributors
+
+- John Campion <john@brightshore.com>
+
 ## v0.2.0
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.6...v0.2.0)

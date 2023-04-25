@@ -21,5 +21,10 @@ export declare function processData(
 export declare function defineConfig(
   config: UserConfig<VPBThemeConfig>
 ): UserConfig<VPBThemeConfig>
-export declare const tailwindContent: string[]
-export declare function defineTailwindConfig(config: Partial<Config>): Config
+export declare const tailwindThemeContent =
+  './node_modules/@jcamp/vitepress-blog-theme/src/**/*.{js,ts,vue}'
+export declare function defineTailwindContent(base?: string): string[]
+export declare function defineTailwindConfig(
+  base: string | undefined,
+  config: Partial<Config>
+): Config

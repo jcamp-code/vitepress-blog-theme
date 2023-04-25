@@ -124,7 +124,10 @@ export function defineTailwindContent(base = './src') {
   ]
 }
 
-export function defineTailwindConfig(config: Partial<Config>, base = './src') {
+export function defineTailwindConfig(base = './src', config: Partial<Config>) {
+  if (base === null || base === undefined) {
+    base = './src'
+  }
   return {
     darkMode: 'class',
     // @ts-expect-error icons works once transpiled

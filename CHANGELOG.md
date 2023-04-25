@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.0
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.6...v0.2.0)
+
+### 🚀 Enhancements
+
+- Easier config setup ([#1](https://github.com/jcamp-code/vitepress-blog-theme/pull/1))
+
+### ❤️ Contributors
+
+- John Campion Jr <john@brightshore.com>
+
 ## v0.1.6
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.1.5...v0.1.6)

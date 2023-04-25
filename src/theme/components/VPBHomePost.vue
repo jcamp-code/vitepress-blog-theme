@@ -26,7 +26,7 @@ defineProps<{
     >
       <a :href="post.url">{{ post.title }}</a>
     </h2>
-    <p class="mb-5 font-light" v-html="post.excerpt" />
+    <div class="mb-5 font-light" v-html="post.excerpt"></div>
     <div class="flex items-center justify-between">
       <VPBHomeAuthor :name="post.author" />
       <a

@@ -114,7 +114,7 @@ export function defineConfig(config: UserConfig<VPBThemeConfig>) {
 }
 
 export const tailwindContent = [
-  './node_modules/@jcamp/vitepress-blog-theme/dist/**/*.{js,ts,vue}',
+  './node_modules/@jcamp/vitepress-blog-theme/src/**/*.{js,ts,vue}',
   './*.md',
   './blog/**/*.md',
   './.vitepress/**/*.{js,ts,vue}',

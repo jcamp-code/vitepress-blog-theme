@@ -71,7 +71,7 @@ $ pnpm exec https://github.com/jcamp-code/starter-vitepress-blog
 :::warning We are still working on the init wizard
 :::
 
-VitePress ships with a command line setup wizard that will help you scaffold a basic project. After installation, start the wizard by running:
+<!-- VitePress ships with a command line setup wizard that will help you scaffold a basic project. After installation, start the wizard by running:
 
 ::: code-group
 
@@ -89,7 +89,7 @@ You will be greeted with a few simple questions:
 
 <p>
   <img src="./vitepress-init.png" alt="vitepress init screenshot" style="border-radius:8px">
-</p>
+</p> -->
 
 :::tip Vue as Peer Dependency
 If you intend to perform customization that uses Vue components or APIs, you should also explicitly install `vue` as a peer dependency.
@@ -143,8 +143,6 @@ Markdown files outside the `.vitepress` directory are considered **source files*
 
 VitePress uses **file-based routing**: each `.md` file is compiled into a corresponding `.html` file with the same path. For example, `index.md` will be compiled into `index.html`, and can be visited at the root path `/` of the resulting VitePress site.
 
-VitePress also provides the ability to generate clean URLs, rewrite paths, and dynamically generate pages. These will be covered in the [Routing Guide](./routing).
-
 ## Up and Running
 
 The tool should have also injected the following npm scripts to your `package.json` if you allowed it to do so during the setup process:
@@ -192,8 +190,6 @@ $ pnpm exec vitepress dev docs
 ```
 
 :::
-
-More command line usage is documented in the [CLI Reference](../reference/cli).
 
 The dev server should be running at `http://localhost:5173`. Visit the URL in your browser to see your new site in action!
 

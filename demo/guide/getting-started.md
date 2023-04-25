@@ -13,7 +13,7 @@ You can try VitePress directly in your browser on [StackBlitz](https://vitepress
 - Text Editor with [Markdown](https://en.wikipedia.org/wiki/Markdown) syntax support.
   - [VSCode](https://code.visualstudio.com/) is recommended, along with the [official Vue extension](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
 
-VitePress Blog can be used on its own, or be installed into an existing project. In both cases, you can install it with:
+VitePress Blog can be used on its own, or be installed into an existing project. You need to install both `vitepress` and `@jcamp/vitepress-blog-theme` In both cases, you can install it with:
 
 ::: code-group
 
@@ -46,7 +46,30 @@ If using PNPM, you will notice a missing peer warning for `@docsearch/js`. This 
 
 :::
 
+### Start Repo
+
+We have a starter template repo available on GitHub:
+
+https://github.com/jcamp-code/starter-vitepress-blog
+
+You can click the large green `Use This Template` button GitHub or use `degit` to get started:
+
+::: code-group
+
+```sh [npm]
+$ npx degit https://github.com/jcamp-code/starter-vitepress-blog
+```
+
+```sh [pnpm]
+$ pnpm exec https://github.com/jcamp-code/starter-vitepress-blog
+```
+
+:::
+
 ### Setup Wizard
+
+:::warning We are still working on the init wizard
+:::
 
 VitePress ships with a command line setup wizard that will help you scaffold a basic project. After installation, start the wizard by running:
 
@@ -92,7 +115,7 @@ Assuming you chose to scaffold the VitePress project in `./docs`, the generated 
 The `docs` directory is considered the **project root** of the VitePress site. The `.vitepress` directory is a reserved location for VitePress' config file, dev server cache, build output, and optional theme customization code.
 
 :::tip
-By default, VitePress stores its dev server cache in `.vitepress/cache`, and the production build output in `.vitepress/dist`. If using Git, you should add them to your `.gitignore` file. These locations can also be [configured](../reference/site-config#outdir).
+By default, VitePress stores its dev server cache in `.vitepress/cache`, and the production build output in `.vitepress/dist`. If using Git, you should add them to your `.gitignore` file. These locations can also be [configured](https://vitepress.dev/reference/site-config#outdir).
 :::
 
 ### The Config File
@@ -112,7 +135,7 @@ export default {
 }
 ```
 
-You can also configure the behavior of the theme via the `themeConfig` option. Consult the [Config Reference](../reference/site-config) for full details on all config options.
+You can also configure the behavior of the theme via the `themeConfig` option. Consult the [Config Reference](../reference/config) for full details on all config options.
 
 ### Source Files
 
@@ -176,12 +199,4 @@ The dev server should be running at `http://localhost:5173`. Visit the URL in yo
 
 ## What's Next?
 
-- To better understand how markdown files are mapped to generated HTML, proceed to the [Routing Guide](./routing).
-
-- To discover more about what you can do on the page, such as writing markdown content or using Vue Component, refer to the "Writing" section of the guide. A great place to start would be to learn about [Markdown Extensions](./markdown).
-
-- To explore the features provided by the default documentation theme, check out the [Default Theme Config Reference](../reference/default-theme-config).
-
-- If you want to further customize the appearance of your site, explore how to either [Extend the Default Theme](./extending-default-theme) or [Build a Custom Theme](./custom-theme).
-
-- Once your documentation site takes shape, make sure to read the [Deployment Guide](./deploy).
+- For full details of VitePress and its deployment, please refer to the [VitePress Guide](https://vitepress.dev/guide/getting-started)

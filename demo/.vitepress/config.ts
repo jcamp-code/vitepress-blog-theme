@@ -153,18 +153,18 @@ function sidebarGuide() {
         { text: 'Credits', link: '/guide/credits' },
       ],
     },
-    {
-      text: 'Customization',
-      collapsed: false,
-      items: [
-        { text: 'Using a Custom Theme', link: '/guide/custom-theme' },
-        {
-          text: 'Extending the Default Theme',
-          link: '/guide/extending-default-theme',
-        },
-        { text: 'SSR Compatibility', link: '/guide/ssr-compat' },
-      ],
-    },
+    // {
+    //   text: 'Customization',
+    //   collapsed: false,
+    //   items: [
+    //     { text: 'Using a Custom Theme', link: '/guide/custom-theme' },
+    //     {
+    //       text: 'Extending the Default Theme',
+    //       link: '/guide/extending-default-theme',
+    //     },
+    //     { text: 'SSR Compatibility', link: '/guide/ssr-compat' },
+    //   ],
+    // },
     {
       text: 'Config & API Reference',
       link: '/reference/config',

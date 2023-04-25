@@ -1,7 +1,9 @@
 import path from 'node:path'
-import { defineConfigWithTheme } from 'vitepress'
 import type { VPBThemeConfig } from '@jcamp/vitepress-blog-theme'
-import { genFeed, processPosts } from '@jcamp/vitepress-blog-theme/node'
+import { defineConfigWithTheme } from 'vitepress'
+import { genFeed, processData } from '@jcamp/vitepress-blog-theme/config'
+// can't use here
+// import { defineConfig } from '@jcamp/vitepress-blog-theme/config'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfigWithTheme<VPBThemeConfig>({
@@ -11,15 +13,14 @@ export default defineConfigWithTheme<VPBThemeConfig>({
     },
     resolve: {
       alias: {
-        '@jcamp/vitepress-blog-theme/node': path.join(
+        '@jcamp/vitepress-blog-theme/config': path.join(
           __dirname,
-          '../../src/node'
+          '../../src/config'
         ),
         '@jcamp/vitepress-blog-theme': path.join(__dirname, '../../src/theme'),
       },
     },
   },
-
   title: 'VitePress Blog Demo',
   description: 'A VitePress Blog Theme',
   themeConfig: {
@@ -88,8 +89,9 @@ export default defineConfigWithTheme<VPBThemeConfig>({
       },
     ],
   },
+
   buildEnd: genFeed,
   async transformPageData(pageData, ctx) {
-    await processPosts(pageData, ctx)
+    await processData(pageData, ctx)
   },
 })

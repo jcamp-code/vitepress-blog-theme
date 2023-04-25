@@ -23,24 +23,23 @@
   ],
   "exports": {
     ".": "./src/theme/index.ts",
-    "./node": "./dist/node/index.js",
-    "./composables/usePosts": "./src/theme/composables/usePosts.ts"
+    "./config": "./dist/config/index.js"
   },
   "main": "src/theme/index.ts",
   "files": [
     "src",
     "dist",
-    "node.d.ts"
+    "config.d.ts"
   ],
   "scripts": {
-    "prepare": "npx simple-git-hooks && pnpm build-node",
+    "prepare": "npx simple-git-hooks && pnpm build-config",
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "type": "tsc --noEmit",
-    "build-node": "tsc -p ./src/node",
+    "build-config": "tsc -p ./src/config",
     "test": "pnpm lint && pnpm type",
     "dev": "vitepress dev demo",
-    "build": "pnpm build-node && vitepress build demo",
+    "build": "pnpm build-config && vitepress build demo",
     "serve": "pnpm build && vitepress serve demo",
     "release": "changelogen --release --push && pnpm publish --access public",
     "release:minor": "changelogen --release --minor --push && pnpm publish --access public",
@@ -79,7 +78,7 @@
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4",
     "vite": "^4.3.1",
-    "vitepress": "1.0.0-alpha.73",
+    "vitepress": "1.0.0-alpha.74",
     "vitest": "^0.30.1",
     "vue": "^3.2.47"
   },

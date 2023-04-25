@@ -33,7 +33,7 @@
     // "declarationDir": "types"
     "paths": {
       "@jcamp/vitepress-blog-theme": ["./src/theme/index.ts"],
-      "@jcamp/vitepress-blog-theme/node": ["./src/node/index.ts"]
+      "@jcamp/vitepress-blog-theme/config": ["./src/config/index.js"]
     }
   },
   "include": ["src", "demo/.vitepress/**/*"],

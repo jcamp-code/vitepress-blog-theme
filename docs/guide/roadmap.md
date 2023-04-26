@@ -1,0 +1,3 @@
+# Roadmap
+
+- Easily replaceable components

@@ -4,8 +4,8 @@ const icons = require('@jcamp/tailwindcss-plugin-icons')
 
 export const tailwindContent = [
   './src/theme/**/*.{js,ts,vue}',
-  './demo/**/*.md',
-  './demo/.vitepress/**/*.{js,ts,vue}',
+  './docs/**/*.md',
+  './docs/.vitepress/**/*.{js,ts,vue}',
 ]
 
 module.exports = {

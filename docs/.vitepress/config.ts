@@ -25,9 +25,14 @@ export default defineConfigWithTheme<VPBThemeConfig>({
       },
     },
   },
+  cleanUrls: true,
   title: 'VitePress Blog',
   description: 'A VitePress Blog Theme',
   themeConfig: {
+    editLink: {
+      pattern:
+        'https://github.com/jcamp-code/vitepress-blog-theme/edit/main/docs/:path',
+    },
     blog: {
       title: 'My AI Written Blog',
       description: 'All these articles were written by AI!',
@@ -115,16 +120,6 @@ export default defineConfigWithTheme<VPBThemeConfig>({
       '/reference/': sidebarReference(),
     },
 
-    // sidebar: [
-    //   {
-    //     text: 'Examples',
-    //     items: [
-    //       { text: 'Markdown Examples', link: '/markdown-examples' },
-    //       { text: 'Runtime API Examples', link: '/api-examples' },
-    //     ],
-    //   },
-    // ],
-
     socialLinks: [
       {
         icon: 'github',
@@ -150,21 +145,18 @@ function sidebarGuide() {
           link: '/guide/what-is-vitepress-blog',
         },
         { text: 'Getting Started', link: '/guide/getting-started' },
+        { text: 'Roadmap', link: '/guide/roadmap' },
         { text: 'Credits', link: '/guide/credits' },
       ],
     },
-    // {
-    //   text: 'Customization',
-    //   collapsed: false,
-    //   items: [
-    //     { text: 'Using a Custom Theme', link: '/guide/custom-theme' },
-    //     {
-    //       text: 'Extending the Default Theme',
-    //       link: '/guide/extending-default-theme',
-    //     },
-    //     { text: 'SSR Compatibility', link: '/guide/ssr-compat' },
-    //   ],
-    // },
+    {
+      text: 'Front Matter',
+      collapsed: false,
+      items: [
+        { text: 'Post Front Matter', link: '/guide/frontmatter-post' },
+        { text: 'Author Front Matter', link: '/guide/frontmatter-author' },
+      ],
+    },
     {
       text: 'Config & API Reference',
       link: '/reference/config',

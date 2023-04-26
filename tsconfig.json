@@ -36,6 +36,6 @@
       "@jcamp/vitepress-blog-theme/config": ["./src/config/index.js"]
     }
   },
-  "include": ["src", "demo/.vitepress/**/*"],
+  "include": ["src", "docs/.vitepress/**/*"],
   "exclude": ["node_modules"]
 }

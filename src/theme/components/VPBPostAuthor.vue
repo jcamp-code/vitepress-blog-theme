@@ -55,7 +55,7 @@ const author = computed(() => {
                 :href="`https://twitter.com/${author.twitter}`"
                 target="_blank"
                 rel="noopener noreferrer"
-                >{{ author.twitter }}</a
+                >@{{ author.twitter }}</a
               >
             </dd>
           </dl>

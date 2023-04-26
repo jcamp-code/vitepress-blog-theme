@@ -2,7 +2,7 @@
 
 ## Try It Online
 
-You can try VitePress directly in your browser on [StackBlitz](https://vitepress.new).
+You can try VitePress Blog directly in your browser on [StackBlitz](https://stackblitz.com/github/jcamp-code/starter-vitepress-blog?file=README.md).
 
 ## Installation
 
@@ -95,28 +95,17 @@ You will be greeted with a few simple questions:
 If you intend to perform customization that uses Vue components or APIs, you should also explicitly install `vue` as a peer dependency.
 :::
 
-## File Structure
+### Posts and Authors
 
-If you are building a standalone VitePress site, you can scaffold the site in your current directory (`./`). However, if you are installing VitePress in an existing project alongside other source code, it is recommended to scaffold the site in a nested directory (e.g. `./docs`) so that it is separate from the rest of the project.
+Files stored under `/blog/posts` are converted to blog posts, while files stored under `/blog/authors` are treated as author details. These paths can be configured as needed.
 
-Assuming you chose to scaffold the VitePress project in `./docs`, the generated file structure should look like this:
+You can also set a default author if you don't want to specify an author for every post, for exmple, if there is only one author.
 
-```
-.
-├─ docs
-│  ├─ .vitepress
-│  │  └─ config.js
-│  ├─ api-examples.md
-│  ├─ markdown-examples.md
-│  └─ index.md
-└─ package.json
-```
+### Categories and Tags
 
-The `docs` directory is considered the **project root** of the VitePress site. The `.vitepress` directory is a reserved location for VitePress' config file, dev server cache, build output, and optional theme customization code.
+The category is a top level item, and is optional. For example, this can be articles, documentation, tutorials, whatever you want it to be.
 
-:::tip
-By default, VitePress stores its dev server cache in `.vitepress/cache`, and the production build output in `.vitepress/dist`. If using Git, you should add them to your `.gitignore` file. These locations can also be [configured](https://vitepress.dev/reference/site-config#outdir).
-:::
+Tags are specified on each post and each post can have as many tags as you want.
 
 ### The Config File
 
@@ -134,14 +123,6 @@ export default {
   },
 }
 ```
-
-You can also configure the behavior of the theme via the `themeConfig` option. Consult the [Config Reference](../reference/config) for full details on all config options.
-
-### Source Files
-
-Markdown files outside the `.vitepress` directory are considered **source files**.
-
-VitePress uses **file-based routing**: each `.md` file is compiled into a corresponding `.html` file with the same path. For example, `index.md` will be compiled into `index.html`, and can be visited at the root path `/` of the resulting VitePress site.
 
 ## Up and Running
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.3.0
+
+[compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.2.3...v0.3.0)
+
+### 🚀 Enhancements
+
+- Docs ([#2](https://github.com/jcamp-code/vitepress-blog-theme/pull/2))
+
+### 🏡 Chore
+
+- Don't pretty generated .d.ts file ([7430889](https://github.com/jcamp-code/vitepress-blog-theme/commit/7430889))
+
+### ❤️ Contributors
+
+- John Campion Jr <john@brightshore.com>
+- John Campion <john@brightshore.com>
+
 ## v0.2.3
 
 [compare changes](https://github.com/jcamp-code/vitepress-blog-theme/compare/v0.2.2...v0.2.3)

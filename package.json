@@ -1,7 +1,7 @@
 {
   "name": "@jcamp/vitepress-blog-theme",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "packageManager": "pnpm@8.2.0",
   "description": "VitePress easy to use blog theme",
   "author": "John Campion (https://github.com/JohnCampionJr/)",
